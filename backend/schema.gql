@@ -1,0 +1,32 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AuthTokenObject {
+  token: String!
+  expiry: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type PlayerObject {
+  firstName: String!
+  secondName: String!
+  displayName: String!
+  team: String!
+  totalPoints: Float!
+  pointsPerGame: Float!
+  yellowCards: Float!
+}
+
+type Query {
+  hello: String!
+  players(league: String!): [PlayerObject!]!
+}
+
+type Mutation {
+  login(mobileNumber: String!, password: String!): AuthTokenObject!
+}
