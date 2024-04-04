@@ -19,6 +19,7 @@ export class AuthService {
       throw new Error('Invalid credentials');
     }
     const payload = { mobileNumber, sub: 'Some unique identifier' }; // In real scenarios, sub should be a user's unique identifier
+
     return {
       token: this.jwtService.sign(payload),
       expiry: new Date(new Date().getTime() + 60 * 60 * 1000), // 1 hour from now

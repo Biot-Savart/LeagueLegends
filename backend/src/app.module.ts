@@ -9,7 +9,6 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { PlayersModule } from './players/players.module';
 dotenv.config();
-console.log(process.env.JWT_SECRET); // Should print your secret key if loaded correctly
 
 @Module({
   imports: [
@@ -19,8 +18,9 @@ console.log(process.env.JWT_SECRET); // Should print your secret key if loaded c
       // any other configurations...
     }),
     JwtModule.register({
-      secret: process.env.JWT_SECRET, // Ensure this matches your environment variable
-      signOptions: { expiresIn: '60m' }, // Token expires in 1 hour
+      global: true,
+      secret: process.env.JWT_SECRET, // Ensure you have a secure secret for production
+      signOptions: { expiresIn: '60m' },
     }),
     AuthModule,
     PlayersModule,
