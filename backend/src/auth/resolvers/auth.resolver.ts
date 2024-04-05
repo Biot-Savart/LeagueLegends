@@ -11,6 +11,7 @@ export class AuthResolver {
     @Args('mobileNumber') mobileNumber: string,
     @Args('password') password: string,
   ): Promise<AuthTokenObject> {
+    console.log('Logging in...');
     // Validate input and call AuthService to generate a token
     return this.authService.generateToken(mobileNumber, password);
   }

@@ -6,6 +6,7 @@ export class AuthService {
   constructor(private readonly jwtService: JwtService) {}
 
   async validateUser(mobileNumber: string, password: string): Promise<boolean> {
+    console.log('Validating user...');
     // Example validation: In a real application, you should validate against data in your database
     const isValidMobile =
       /^\d{10}$/.test(mobileNumber) && mobileNumber.startsWith('0');
