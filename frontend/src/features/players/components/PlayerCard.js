@@ -11,7 +11,7 @@ const PlayerCard = ({ player }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-4 flex items-center">
+        <div className="font-bold text-xl mb-4 flex items-center text-blue-900">
           <UserCircleIcon className="h-7 w-7 mr-2" />
           {player.displayName}
         </div>

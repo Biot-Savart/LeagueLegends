@@ -15,6 +15,7 @@ dotenv.config();
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql', // or specify a path to a schema file
+      context: ({ req, res }) => ({ req, res }), // Make sure req and res are passed to context
       // any other configurations...
     }),
     JwtModule.register({

@@ -7,7 +7,8 @@ import PlayerCard from "./components/PlayerCard"; // Assume this is your player 
 import { GET_PLAYERS_QUERY } from "./playersQueries";
 
 const PlayersPage = () => {
-  const [league, setLeague] = useState("EPL");
+  const leagues = ["English Premier League", "Champions League"];
+  const [league, setLeague] = useState(leagues[0]);
   const [sortedPlayers, setSortedPlayers] = useState([]);
   const [teamFilter, setTeamFilter] = useState("");
   const { loading, error, data } = useQuery(GET_PLAYERS_QUERY, {
@@ -58,7 +59,7 @@ const PlayersPage = () => {
             <Dropdown
               value={league}
               onChange={setLeague}
-              options={["English Premier League", "Champions League"]}
+              options={leagues}
               className="w-full"
             />
           </div>
