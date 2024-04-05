@@ -32,6 +32,15 @@ The backend is developed with NestJS, a progressive Node.js framework for buildi
      npm run start:prod
      ```
 
+3. **Unit Tests**
+To run the unit tests for the backend, use the following command:
+
+```
+cd backend
+npm run test
+```
+This command runs the Jest test runner in the standard mode.
+
 ### Frontend Setup
 
 The frontend is bootstrapped with Create React App, offering a modern setup with React.
