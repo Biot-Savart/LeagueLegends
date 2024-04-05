@@ -14,9 +14,9 @@ export class PlayersService {
 
   fetchPlayers(league: string): Observable<PlayerObject> {
     switch (league) {
-      case 'EPL':
+      case 'English Premier League':
         return this.getPremierLeaguePlayers();
-      case 'UCL':
+      case 'Champions League':
         return this.getChampionsLeaguePlayers();
       default:
         throw new Error('Unsupported league');

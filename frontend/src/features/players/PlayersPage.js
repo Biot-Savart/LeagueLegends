@@ -58,7 +58,7 @@ const PlayersPage = () => {
             <Dropdown
               value={league}
               onChange={setLeague}
-              options={["EPL", "UCL"]}
+              options={["English Premier League", "Champions League"]}
               className="w-full"
             />
           </div>
