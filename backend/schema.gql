@@ -24,7 +24,6 @@ type PlayerObject {
 }
 
 type Query {
-  hello: String!
   players(league: String!): [PlayerObject!]!
 }
 

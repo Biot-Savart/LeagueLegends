@@ -12,18 +12,18 @@ import {
 export class PlayersService {
   constructor(private httpService: HttpService) {}
 
-  fetchPlayers(league: string): Observable<PlayerObject> {
+  fetchPlayers(league: string): Observable<PlayerObject[]> {
     switch (league) {
       case 'English Premier League':
         return this.getPremierLeaguePlayers();
       case 'Champions League':
         return this.getChampionsLeaguePlayers();
       default:
-        throw new Error('Unsupported league');
+        return new Observable<[]>();
     }
   }
 
-  private getPremierLeaguePlayers(): Observable<PlayerObject> {
+  private getPremierLeaguePlayers(): Observable<PlayerObject[]> {
     const apiUrl = 'https://fantasy.premierleague.com/api/bootstrap-static/';
     return this.httpService.get(apiUrl).pipe(
       map((response) => {
@@ -47,7 +47,7 @@ export class PlayersService {
     );
   }
 
-  private getChampionsLeaguePlayers(): Observable<PlayerObject> {
+  private getChampionsLeaguePlayers(): Observable<PlayerObject[]> {
     const apiUrl =
       'https://gaming.uefa.com/en/uclfantasy/services/feeds/players/players_60_en_7.json';
     return this.httpService.get(apiUrl).pipe(

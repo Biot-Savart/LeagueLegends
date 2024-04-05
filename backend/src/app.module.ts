@@ -3,8 +3,6 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { JwtModule, JwtService } from '@nestjs/jwt';
 import * as dotenv from 'dotenv';
-import { AppController } from './app.controller';
-import { SampleResolver } from './app.resolver';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { PlayersModule } from './players/players.module';
@@ -26,7 +24,6 @@ dotenv.config();
     AuthModule,
     PlayersModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, SampleResolver, JwtService],
+  providers: [AppService, JwtService],
 })
 export class AppModule {}
